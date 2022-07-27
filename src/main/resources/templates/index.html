@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>b23ToBilibili</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
+    <link rel="stylesheet" href="../static/css/me.css" th:href="@{/css/me.css}">
+    <!--    <script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>-->
+</head>
+<body>
+
+<div class="m-container-small m-padded-tb-massive" style="max-width: 50em !important;">
+    <div class="ui container">
+        <div class="ui middle aligned center aligned grid">
+            <div class="column">
+                <div class="ui center aligned basic circular segment" style="width: 900px">
+                    <form class="ui large form" method="post" action="#">
+                        <div class="field">
+                            <p style="font-size: 30pt">b23Converter</p>
+                            <div class="ui big icon input">
+                                <input type="text"  id="b23url" name="b23url" placeholder="Input your 'b23' url..."
+                                       style="border-radius: 30px">
+                                <i onclick="submit()" class="arrow right link icon"></i>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+<script>
+    /*submit事件*/
+    function submit(){
+        $.ajax({
+            url:"/index",
+            type:"POST",
+            data:{"b23url":$("#b23url").val()},
+            // dataType: "JSON",
+            success: function (data){
+               alert("hello");
+               alert(data)
+            }
+        });
+    }
+
+</script>
+</html>

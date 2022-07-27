@@ -1,0 +1,5 @@
+server:
+  port: 2233
+spring:
+  thymeleaf:
+    cache: false
