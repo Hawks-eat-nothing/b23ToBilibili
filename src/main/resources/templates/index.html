@@ -17,7 +17,10 @@
                 <div class="ui center aligned basic circular segment" style="width: 900px">
                     <form class="ui large form" method="post" action="#">
                         <div class="field">
-                            <p style="font-size: 30pt">b23Converter</p>
+<!--                            <p style="font-size: 30pt">b23Converter</p>-->
+                            <img src="../static/imgs/header.png" style="width: 500px !important;">
+                            <br>
+                            <br>
                             <div class="ui big icon input">
                                 <input type="text"  id="b23url" name="b23url" placeholder="Input your 'b23' url..."
                                        style="border-radius: 30px">
@@ -44,11 +47,9 @@
             data:{"b23url":$("#b23url").val()},
             // dataType: "JSON",
             success: function (data){
-               alert("hello");
                alert(data)
             }
         });
     }
-
 </script>
 </html>
